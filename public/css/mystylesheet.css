@@ -1,0 +1,99 @@
+@font-face {
+    font-family: roboto_medium;
+    src: url(Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: roboto_light;
+    src: url(Roboto-Light.ttf);
+}
+
+.card-body-text {
+    font-family: roboto_light;
+    color: #515151;
+    font-size: medium;
+    letter-spacing: 1px;
+}
+
+.card {
+    padding: 0;
+    margin-inline: 1%;
+    margin-block:0.5%;
+}
+
+.megacard {
+    z-index: 2;
+    display: flex;
+    margin: 5%;
+    padding: 5%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    min-height: 70vh;
+}
+
+.background_gray_decorative_rectangle {
+    height: 26%;
+    width: 100%;
+    background-color: grey;
+    z-index: -1;
+    position: absolute;
+}
+
+.main-footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1032;
+    background-color: #fff;
+    color: #869099;
+    margin-bottom: 0;
+    padding: 1%;
+    align-self: flex-end;
+}
+
+.bluebg {
+    background-color: rgb(28, 93, 153);
+    color: white;
+}
+
+.cyanbg {
+    background-color: rgb(68, 106, 105);
+    color: white;
+}
+
+.greenbg {
+    background-color: rgb(44, 110, 73);
+    color: white;
+}
+
+.salmonbg {
+    background-color: #98615C;
+    color: white;
+}
+
+.pinkbg {
+    background-color: rgb(182, 136, 82);
+    color: white;
+}
+
+.blue-bebras {
+    color: rgb(28, 93, 153);
+}
+
+.cyan-bebras {
+    color: rgb(68, 106, 105);
+}
+
+.green-bebras {
+    color: rgb(44, 110, 73);
+}
+
+.salmon-bebras {
+    color: hsl(5, 52%, 60%);
+}
+
+.pink-bebras {
+    color: rgb(182, 136, 82);
+}
