@@ -12,9 +12,7 @@
 </head>
 
 
-<body style="background-color:mistyrose; z-index:-2;display:flex; min-height: 100vh; flex-direction: column; justify-content: space-between">
-
-<div>
+<body style="background-color:mistyrose; z-index:-2;display:flex; min-height: 100vh; flex-direction: column; justify-content: space-between;">
 
     <div class="background_gray_decorative_rectangle"></div>
 
@@ -37,33 +35,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/recursos">Recursos</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="/acceder">Acceder</a>
+                    <a class="nav-link" href="/tablero-profesor">Tablero</a>
                 </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" 
-                        href="#" id="navbarDropdownMenuLink" 
-                        role="button" data-toggle="dropdown" 
-                        aria-haspopup="true" 
-                        aria-expanded="false">Registrarse </a>
-                    
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/registro-profesor">Profesor</a>
-                        <a class="dropdown-item" href="/solicitud-inscripcion/padre">Padre</a>
-                        <a class="dropdown-item" href="/solicitud-inscripcion/estudiante">Estudiante</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tablero-profesor/inscribir">Inscribir</a>
                 </li>
             </ul>
         </div>
 
     </nav>
-
-    <div class="card megacard" style="width: auto">
-
+    <div class="card megacard" style="width: auto;display: grid;padding: 2.5%;padding-inline: 2.5%;justify-content: unset">
         @yield('content')
-
     </div>
 </div>
 <div>

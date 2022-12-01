@@ -1,4 +1,7 @@
-@extends('layout.principal_layout')
+@extends(
+    isset($_SESSION['profesor_id']) ? 'layout.dashboard_layout':'layout.principal_layout'
+)
+
 @section('content')
 
 <div class="card">

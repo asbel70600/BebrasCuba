@@ -51,8 +51,9 @@
                         aria-expanded="false">Registrarse </a>
                     
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/registro-tutor">Tutor</a>
-                        <a class="dropdown-item" href="/registro-estudiante">Estudiante</a>
+                        <a class="dropdown-item" href="/registro-profesor">Profesor</a>
+                        <a class="dropdown-item" href="/solicitud-inscripcion/padre">Padre</a>
+                        <a class="dropdown-item" href="/solicitud-inscripcion/estudiante">Estudiante</a>
                     </div>
                 </li>
             </ul>

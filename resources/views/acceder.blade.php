@@ -16,11 +16,12 @@
   
   <!-- // SECTION ─── FORMULARIO ────────────────────────────────────── -->
         <form action="#" method="post">
+          @csrf
             <div class="form-group has-feedback">
-              <input type="text" class="form-control" placeholder="Nombre">
+              <input type="email" name="correo" class="form-control" placeholder="correo">
             </div>
             <div class="form-group has-feedback">
-              <input type="text" class="form-control" placeholder="Contraseña">
+              <input type="password" name="contrasena" class="form-control" placeholder="Contraseña">
             </div>
             <div class="row">
               <div class="col-xs-4">

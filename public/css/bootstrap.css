@@ -4379,7 +4379,7 @@
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
   }
   
   .card > hr {
@@ -4432,7 +4432,7 @@
   }
   
   .card-header:first-child {
-    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    border-radius: calc(0.5rem - 1px) calc(0.5rem - 1px) 0 0;
   }
   
   .card-header + .list-group .list-group-item:first-child {

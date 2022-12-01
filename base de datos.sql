@@ -27,9 +27,13 @@ CHECK(
 CREATE DOMAIN TELEFONO CHAR(8)
 CHECK( 
     VALUE NOT LIKE('% %') 
-    AND 
-    CAST(VALUE AS bigint) 
-    BETWEEN 11111111 AND 99999999
+    AND (
+        CAST(VALUE AS BIGINT) 
+        BETWEEN 21111111 AND 48999999
+        OR
+        CAST(VALUE AS BIGINT)
+        BETWEEN 51111111 AND 59999999
+    )
 );
 
 CREATE DOMAIN GRADO CHAR(2)
@@ -48,39 +52,34 @@ CREATE TABLE profesores(
     telefono_escuela TELEFONO,
     contrasena VARCHAR(100),
     validado boolean DEFAULT 'false',
-    UNIQUE (email),
 
     CONSTRAINT NOTHING_NULL
-        CHECK(
-            nombre NOT NULL 
-            AND correo NOT NULL 
-            AND telefono NOT NULL
-            AND provincia NOT NULL
-            AND municipio NOT NULL
-            AND escuela NOT NULL
-            AND telefono_escuela NOT NULL
-            AND contrasena NOT NULL
-        ),
-    
-    CONSTRAINT validado_default
-
+        CHECK (
+            nombre IS NOT NULL 
+            AND correo IS NOT NULL 
+            AND telefono IS NOT NULL
+            AND provincia IS NOT NULL
+            AND municipio IS NOT NULL
+            AND escuela IS NOT NULL
+            AND telefono_escuela IS NOT NULL
+            AND contrasena IS NOT NULL)
 );
 
 
 
 CREATE TABLE estudiantes(
     carnet CARNET_I PRIMARY KEY,
-    nombre VARCHAR(50) NOT NULL,
-    grado GRADO NOT NULL,
-    sexo SEXO NOT NULL,
+    nombre VARCHAR(50),
+    grado GRADO,
+    sexo SEXO,
 
 
     CONSTRAINT NOTHING_NULL
-        CHECK(
-            nombre NOT NULL 
-            AND grado NOT NULL
-            AND sexo NOT NULL
-        ),
+        CHECK (
+            nombre IS NOT NULL 
+            AND grado IS NOT NULL
+            AND sexo IS NOT NULL
+        )
 );
 
 
@@ -99,13 +98,32 @@ CREATE TABLE profesor_estudiantes(
     ON DELETE CASCADE
 );
 
-CREATE TABLE provincia(
-    id serial PRIMARY KEY,
-    nombre VARCHAR(30),
-)
+CREATE TABLE solicitudes(
+    nobre_solicitante VARCHAR(50),
+    telefono_solicitante TELEFONO,
+    correo_solicitante EMAIL,
+    telefono_escuela TELEFONO PRIMARY KEY,
+    nombre_escuela VARCHAR(50),
+    nivel VARCHAR(50),
+    provincia VARCHAR(50),
+    municipio VARCHAR(50),
 
-CREATE TABLE municipio(
-    id serial PRIMARY KEY,
-    provincia int REFERENCES provincia(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    nombre VARCHAR(30)
+    CONSTRAINT escuela_no_nula
+    CHECK (
+        nombre_escuela IS NOT NULL
+        AND nivel IS NOT NULL
+        AND provincia IS NOT NULL
+        AND municipio IS NOT NULL
+    )
 );
+
+-- CREATE TABLE provincia(
+--     id serial PRIMARY KEY,
+--     nombre VARCHAR(30),
+-- )
+
+-- CREATE TABLE municipio(
+--     id serial PRIMARY KEY,
+--     provincia int REFERENCES provincia(id) ON UPDATE CASCADE ON DELETE CASCADE,
+--     nombre VARCHAR(30)
+-- );

@@ -1,0 +1,20 @@
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbela','01092570600','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelb','01092570601','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelc','01092570602','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbeld','01092570603','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbele','01092570604','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelf','01092570605','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelg','01092570606','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelh','01092570607','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbeli','01092570608','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelj','01092570609','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelk','01092570610','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbell','01092570611','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelm','01092570612','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbeln','01092570613','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelnn','01092570614','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelo','01092570615','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelp','01092570616','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelq','01092570617','M','5');
+insert into estudiantes (nombre,carnet,sexo,grado) values ('asbelr','01092570618','M','5');
+   
