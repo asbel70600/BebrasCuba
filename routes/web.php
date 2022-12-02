@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AAAA;
 use App\Http\Controllers\acceder_controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\registro_profesor_controller;
@@ -11,8 +10,9 @@ use App\Http\Controllers\tablero_profesor_controller;
 Route::permanentredirect('/','/inicio');
 
 Route::view('/inicio','inicio');
-Route::view('/eventos','eventos');
-Route::view('/recursos','recursos');
+Route::view('/eventos','en_construccion');
+Route::view('/recursos','en_construccion');
+Route::view('/bebras-task','en_construccion');
 
 
 Route::get('/acceder',[acceder_controller::class,'index']);

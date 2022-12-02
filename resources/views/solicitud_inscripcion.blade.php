@@ -1,9 +1,13 @@
 @extends('layout.secondary_layout')
 @section('content')
 
-<form action="/solicitud-inscripcion/{{ $user }}" method="post">
+<p style="color: red;display: block">
+    {{ $error }}
+</p>
+
+<form action="/solicitud-inscripcion/{{ $user }}" method="post" style="">
     @csrf
-    
+
     <p class="login-box-msg">
         {{ $text }}
     </p>
@@ -16,8 +20,28 @@
         <input name="municipio" class="form-control" type="text" placeholder="Municipio de la escuela">
     </div>
 
-    <div class="form-group has-feedback">
-        <input name="nivel" class="form-control" type="text" placeholder="Nivel de enseñanza">
+    <div class="form-group has-feedback" id="nivel_ensenanza_radios">
+        <label for="nivel_ensenanza_radios">
+            Nivel de enseñanza
+        </label>
+         <div class="form-check">
+            <input class="form-check-input" type="radio" name="nivel" id="exampleRadios1" value="primaria" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Primaria
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="nivel" id="exampleRadios1" value="secundaria" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Secundaria
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="nivel" id="exampleRadios1" value="preuniversitario" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Preuniversitario
+            </label>
+          </div>
     </div>
 
     <div class="form-group has-feedback">

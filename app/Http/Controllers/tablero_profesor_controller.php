@@ -39,7 +39,8 @@ class tablero_profesor_controller extends Controller
             ");
 
             if (is_null($action))
-                return view('tablero_profesor', ['estudiantes' => $var,'error'=>'']);
+                return view('tablero_profesor', ['estudiantes' => $var, 'error' => '']);
+
             elseif ($action == 'inscribir')
                 return view('inscribir_estudiante', ['error' => '']);
 
@@ -48,13 +49,12 @@ class tablero_profesor_controller extends Controller
                 return view('inscribir_estudiante', ['error' => 'Hubo un error en los datos, por favor revíselos bien']);
 
             elseif ($action == 'error-edicion')
-                return view('tablero-profesor', ['estudiantes' => $var,'error' => 'Hubo un error en los datos, por favor revíselos bien']);
+                return view('tablero-profesor', ['estudiantes' => $var, 'error' => 'Hubo un error en los datos, por favor revíselos bien']);
+            
             else
-            return view('tablero_profesor', ['estudiantes' => $var,'error'=>'']);
-
-
-        } 
-        else{
+                return view('tablero_profesor', ['estudiantes' => $var, 'error' => '']);
+                
+        } else {
             return redirect('/acceder');
         }
     }

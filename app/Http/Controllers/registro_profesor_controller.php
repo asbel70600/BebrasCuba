@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profesor;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -11,11 +12,15 @@ class registro_profesor_controller extends Controller
 
     public function index()
     {
-        return view('registro_profesor');
+        return view('registro_profesor',[
+            'error' => ''
+        ]);
     }
 
     public function store(Request $request)
     {
+        try{
+
         //ANCHOR - Entrada de datos
         $nombre_profesor = $request->nombre_profesor;
         $correo_profesor = $request->correo_profesor;
@@ -41,17 +46,17 @@ class registro_profesor_controller extends Controller
             $munic == '' or
             $contrasena  == ''
         )
-        return 'error';
+        return view('registro_profesor',['error' => 'No puede dejar campos vacios']);
 
-        $validator = new Validator();
+        //$validator = new Validator();
         //ANCHOR - Validacion
-        if (
-        $validator->checkCorreo($correo_profesor) and
-        $validator->checkTelefono($telefono_escuela) and
-        $validator->checkTelefono($telefono_profesor) and
-        $validator->checkMunicipio($munic) and
-        $validator->checkProvincia($provincia)
-        )
+        // if (
+        // $validator->checkCorreo($correo_profesor) and
+        // $validator->checkTelefono($telefono_escuela) and
+        // $validator->checkTelefono($telefono_profesor) and
+        // $validator->checkMunicipio($munic) and
+        // $validator->checkProvincia($provincia)
+        // )
         
         //ANCHOR - Guardado de datos
         $model = new Profesor();
@@ -65,6 +70,12 @@ class registro_profesor_controller extends Controller
         $model->municipio = $munic;
         $model->carnet = $carnet_profesor;
         $model->save();
+
+        }
+        catch(Exception $e){
+
+            return view('registro_profesor',['error' => 'Asegurese de que los datos que introdujo sean correctos']);
+        }
     }
 
 }

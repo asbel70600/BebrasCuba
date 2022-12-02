@@ -114,6 +114,11 @@ CREATE TABLE solicitudes(
         AND nivel IS NOT NULL
         AND provincia IS NOT NULL
         AND municipio IS NOT NULL
+    ),
+
+    CONSTRAINT nivel_educativo
+    CHECK(
+        nivel IN('primaria','secundaria','preuniversitario')
     )
 );
 

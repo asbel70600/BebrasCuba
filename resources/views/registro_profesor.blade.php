@@ -14,6 +14,7 @@
         
         <form action="/registro-profesor" method="post">
           @csrf
+          <p style="color: red">{{ $error }}</p>
           <div class="form-group has-feedback">
               <input type="text" name="nombre_profesor" class="form-control" placeholder="Nombre">
           </div>

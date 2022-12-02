@@ -1,3 +1,8 @@
+<?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+?>
 @extends(
     isset($_SESSION['profesor_id']) ? 'layout.dashboard_layout':'layout.principal_layout'
 )
@@ -17,7 +22,7 @@
 students at all ages. Participants are usually supervised by teachers who
 may integrate the Bebras challenge in their teaching activities.
 The challenge is performed at schools using computers or mobile devices.</pre>
-        <a href="#" class="blue-bebras">mas acerca de bebras</a>
+        <a href="https://www.bebras.org/" class="blue-bebras">mas acerca de bebras</a>
     </div>
 </div>
 
@@ -25,7 +30,7 @@ The challenge is performed at schools using computers or mobile devices.</pre>
 
 <div class="card">
     <div class="card-header greenbg">
-        <h5 class="card-title">Evnetos</h5>
+        <h5 class="card-title">Eventos</h5>
     </div>
 
     <div class="card-body">
@@ -37,7 +42,7 @@ activities like participants awarding events,
 second round of the challenge, summer
 campus, teacher workshops, collecting 
 statistics and writing research papers.</pre>
-        <a href="#" class="green-bebras">Más información</a>
+        <a href="/eventos" class="green-bebras">Más información</a>
     </div>
 </div>
 
@@ -85,7 +90,7 @@ available to try without
 registering or logging in.
 It depends on language do you 
 know. Examples: Finland, Sweden, UK.</pre>
-        <a href="#" class="cyan-bebras">Ver recursos</a>
+        <a href="https://www.bebras.org/documents.html" class="cyan-bebras">Ver recursos</a>
     </div>
 </div>
 
@@ -105,7 +110,7 @@ scientists often meet and enjoy solving.
 The tasks can be solved without prior knowledge 
 but instead require logical thinking. The aim is 
 to solve as many as you can in the allotted time.</pre>
-        <a href="#" class="green-bebras">More information What is a Bebras task.</a>
+        <a href="https://www.bebras.org/examples.html" class="green-bebras">More information What is a Bebras task.</a>
     </div>
 </div>
 

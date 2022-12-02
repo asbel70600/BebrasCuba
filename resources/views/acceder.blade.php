@@ -5,7 +5,7 @@
 <div class="login-box" style="margin:auto">
 
     <div class="login-logo">
-      <a href="#"><b>BEBRAS</b>CUBA</a>
+      <a href="/inicio"><b>BEBRAS</b>CUBA</a>
     </div>
   
   
@@ -17,6 +17,7 @@
   <!-- // SECTION ─── FORMULARIO ────────────────────────────────────── -->
         <form action="#" method="post">
           @csrf
+          <p style="color: red">{{ $error }}</p>
             <div class="form-group has-feedback">
               <input type="email" name="correo" class="form-control" placeholder="correo">
             </div>
@@ -34,8 +35,7 @@
   <!-- // SECTION NOT LOGGED ──────────────────────────────────────────────────────────────────── --> 
         <p style="align-items: center;align-content: center;">
           No tiene cuenta aun?</br>
-          <a href="/registro-tutor" style="align-self:center">registrarme como tutor de un estudiante</a></br>
-          <a href="/registro-estudiante" class="text-center">registrarme como estudiante</a>
+          <a href="/registro-profesor" style="align-self:center">Registrarme</a></br>
         </p>
       
       

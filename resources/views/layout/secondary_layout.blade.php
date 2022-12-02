@@ -60,7 +60,7 @@
 
     </nav>
 
-    <div class="card megacard" style="width: auto">
+    <div class="card megacard" style="width: auto; flex-direction: column">
 
         @yield('content')
 
