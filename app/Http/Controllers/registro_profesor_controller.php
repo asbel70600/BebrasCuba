@@ -19,8 +19,6 @@ class registro_profesor_controller extends Controller
 
     public function store(Request $request)
     {
-        try{
-
         //ANCHOR - Entrada de datos
         $nombre_profesor = $request->nombre_profesor;
         $correo_profesor = $request->correo_profesor;
@@ -34,47 +32,42 @@ class registro_profesor_controller extends Controller
         $telefono_escuela = $request->telefono_escuela;
 
         $contrasena = $request->contrasena;
+       
+        try{
+
+            $validator = new Validator();
+            $validator->checkCorreo($correo_profesor);
+            $validator->checkTelefono($telefono_escuela);
+            $validator->checkTelefono($telefono_profesor);
+            $validator->checkCarnet($carnet_profesor);
+            //$validator->checkMunicipio($munic);
+            //$validator->checkProvincia($provincia);
         
-        if(
-            $nombre_profesor == '' or
-            $telefono_profesor == '' or
-            $carnet_profesor == '' or
-            $correo_profesor == '' or
-            $telefono_escuela == '' or
-            $nombre_escuela == '' or
-            $provincia == '' or
-            $munic == '' or
-            $contrasena  == ''
-        )
-        return view('registro_profesor',['error' => 'No puede dejar campos vacios']);
+            //ANCHOR - Guardado de datos
+            $model = new Profesor();
+            $model->nombre = $nombre_profesor;
+            $model->telefono = $telefono_profesor;
+            $model->correo  = $correo_profesor;
+            $model->telefono_escuela = $telefono_escuela;
+            $model->escuela = $nombre_escuela;
+            $model->contrasena = Hash::make($contrasena);
+            $model->provincia = $provincia;
+            $model->municipio = $munic;
+            $model->carnet = $carnet_profesor;
+            $model->save();
 
-        //$validator = new Validator();
-        //ANCHOR - Validacion
-        // if (
-        // $validator->checkCorreo($correo_profesor) and
-        // $validator->checkTelefono($telefono_escuela) and
-        // $validator->checkTelefono($telefono_profesor) and
-        // $validator->checkMunicipio($munic) and
-        // $validator->checkProvincia($provincia)
-        // )
-        
-        //ANCHOR - Guardado de datos
-        $model = new Profesor();
-        $model->nombre = $nombre_profesor;
-        $model->telefono = $telefono_profesor;
-        $model->correo  = $correo_profesor;
-        $model->telefono_escuela = $telefono_escuela;
-        $model->escuela = $nombre_escuela;
-        $model->contrasena = Hash::make($contrasena);
-        $model->provincia = $provincia;
-        $model->municipio = $munic;
-        $model->carnet = $carnet_profesor;
-        $model->save();
+            return view('inicio',['texto' => 'Operación exitosa']);
+            
+        } catch (Exception $e) {
 
-        }
-        catch(Exception $e){
+            if($validator -> isKnownError($e->getMessage()))
+                return view('registro_profesor',['error' => $e->getMessage()]);
 
-            return view('registro_profesor',['error' => 'Asegurese de que los datos que introdujo sean correctos']);
+            elseif(substr($e->getMessage(),0,33)=='SQLSTATE[23505]: Unique violation')
+                return view('registro_profesor',['error' => 'Ya se ha registrado? Trate acceder']);
+
+            else
+                return view('registro_profesor',['error'=>'Error vuelva a intentarlo']);
         }
     }
 

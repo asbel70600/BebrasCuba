@@ -24,11 +24,11 @@
           </div>
   
           <div class="form-group has-feedback">
-            <input type="number" name="telefono_profesor" class="form-control" placeholder="Telefono personal">
+            <input type="number" min="0" max="99999999" name="telefono_profesor" class="form-control" placeholder="Telefono personal">
           </div>
   
           <div class="form-group has-feedback">
-              <input type="number" name="carnet_profesor" class="form-control" placeholder="Carnet">
+              <input type="number" min="01010100000" max="99999999999" name="carnet_profesor" class="form-control" placeholder="Carnet">
           </div>
           
           <div class="form-group has-feedback">
@@ -44,7 +44,7 @@
           </div>
   
           <div class="form-group has-feedback">
-            <input type="number" name="telefono_escuela" class="form-control" placeholder="Telefono de la escuela">
+            <input type="number" min="0" max="99999999" name="telefono_escuela" class="form-control" placeholder="Telefono de la escuela">
           </div>
   
           <div class="form-group has-feedback">

@@ -18,15 +18,28 @@
         </div>
 
         <div class="form-group has-feedback">
-            <input type="number" name="carnet" class="form-control" placeholder="Carnet">
-        </div>
+            <input type="number" min="0" max="99999999999" name="carnet" class="form-control" placeholder="Carnet">
+        </div> 
         
-        <div class="form-group has-feedback">
-          <input type="texi" name="sexo" class="form-control" placeholder="Sexo">
+        <div class="form-group has-feedback" id="sexo_selector">
+          <label for="sexo_selector">
+              Sexo
+          </label>
+     
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sexo" id="sexoM" value="M" checked>
+          <label class="form-check-label" for="sexoM">
+            Masculino
+          </label>
         </div>
-
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sexo" id="sexoF" value="preuniversitario">
+          <label class="form-check-label" for="sexoF">
+            Femenino
+          </label>
+        </div>
         <div class="form-group has-feedback">
-          <input type="number" name="grado" class="form-control" placeholder="grado">
+          <input type="number" min="1" max="12" name="grado" class="form-control" placeholder="grado">
         </div>
 
         <button type="submit" class="btn btn-primary btn-block btn-flat">Registrarse</button>

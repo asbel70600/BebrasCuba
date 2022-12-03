@@ -25,19 +25,19 @@
             Nivel de enseñanza
         </label>
          <div class="form-check">
-            <input class="form-check-input" type="radio" name="nivel" id="exampleRadios1" value="primaria" checked>
+            <input class="form-check-input" type="radio" name="nivel" id="exampleRadios1" value="primaria" checked >
             <label class="form-check-label" for="exampleRadios1">
               Primaria
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="nivel" id="exampleRadios1" value="secundaria" checked>
+            <input class="form-check-input" type="radio" name="nivel" id="exampleRadios1" value="secundaria">
             <label class="form-check-label" for="exampleRadios1">
               Secundaria
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="nivel" id="exampleRadios1" value="preuniversitario" checked>
+            <input class="form-check-input" type="radio" name="nivel" id="exampleRadios1" value="preuniversitario">
             <label class="form-check-label" for="exampleRadios1">
               Preuniversitario
             </label>
@@ -49,7 +49,7 @@
     </div>
 
     <div class="form-group has-feedback">
-        <input name="telefono_escuela" class="form-control" inputmode="numeric" placeholder="Teléfono de la escuela">
+        <input name="telefono_escuela" min="0" max="99999999" class="form-control" inputmode="numeric" placeholder="Teléfono de la escuela">
     </div>
 
     <p>Opcionalmente puede propiciarnos sus <br>
@@ -61,11 +61,11 @@
     </div>
 
     <div class="form-group has-feedback">
-        <input name="correo_solicitante" class="form-control" type="text"  placeholder="Correo electrónico">
+        <input name="correo_solicitante" class="form-control" type="email"  placeholder="Correo electrónico">
     </div>
     
     <div class="form-group has-feedback">
-        <input name="telefono_solicitante" class="form-control" type="number" inputmode="numeric" step="" placeholder="Teléfono">
+        <input name="telefono_solicitante" min="0" max="99999999" class="form-control" type="number" inputmode="numeric" step="" placeholder="Teléfono">
     </div>
 
     <button type="submit" class="btn btn-primary btn-block btn-flat">

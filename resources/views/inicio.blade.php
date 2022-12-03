@@ -9,6 +9,24 @@
 
 @section('content')
 
+
+@if (isset($texto))
+        
+        <div class="card" style="width: 100%">
+
+            <div class="card-header" style="background-color: rgb(234, 76, 76)">
+                <h5 class="card-title">Aviso</h5>
+            </div>
+
+            <div class="card-body">
+                <p>{{ $texto }}</p>
+            </div>
+    </div>    
+@else
+    
+@endif
+
+
 <div class="card">
 
     <div class="card-header bluebg">
@@ -17,12 +35,15 @@
 
     <div class="card-body">
        
-        <pre class="card-body-text">Bebras is an international initiative aiming to promote Informatics
-(Computer Science, or Computing) and computational thinking among school
-students at all ages. Participants are usually supervised by teachers who
-may integrate the Bebras challenge in their teaching activities.
-The challenge is performed at schools using computers or mobile devices.</pre>
-        <a href="https://www.bebras.org/" class="blue-bebras">mas acerca de bebras</a>
+        <pre class="card-body-text">Bebras es una iniciativa internacional que tiene como objetivo 
+promover la Informática y el pensamiento Computacional entre estudiantes 
+escolares de todas las edades. Los participantes suelen estar
+supervisados por profesores que pueden integrar el desafío Bebras 
+en sus actividades de enseñanza. El Concurso Bebras se viene realizando 
+desde 2004 en centros educativos. Entre otoño de 2021 y 
+primavera de 2022 se ha realizado en más de 54 países de todo el mundo 
+con una participación de más de 3 000 000 de participantes.</pre>
+        <a href="https://www.bebras.org/" class="blue-bebras">Más acerca de bebras</a>
     </div>
 </div>
 
@@ -34,14 +55,17 @@ The challenge is performed at schools using computers or mobile devices.</pre>
     </div>
 
     <div class="card-body">
-        <pre class="card-body-text">The second week of November is declared 
-as World-Wide BEBRAS week for solving tasks.
-Some countries extended it to two weeks. 
-Many countries run all-year-round Bebras
-activities like participants awarding events,
-second round of the challenge, summer
-campus, teacher workshops, collecting 
-statistics and writing research papers.</pre>
+        <pre class="card-body-text">Para la 1era edición del Bebras Cuba se requiere 
+que cada concursante sea pre-inscrito en el
+sitio https://bebrascuba.uclv.cu, entre los días 
+del 5 al 11 de diciembre del 2022 por un profesor
+que la escuela designe para ello. Solo puede 
+inscribir a los estudiantes de una misma escuela
+un único profesor, quien por demás se hará cargo 
+de la realización del concurso en su institución. 
+En el sitio se le pide llenar un formulario donde 
+se recopilan los datos personales del estudiante 
+y de la escuela en la que el estudiante se encuentra.</pre>
         <a href="/eventos" class="green-bebras">Más información</a>
     </div>
 </div>
@@ -59,15 +83,14 @@ statistics and writing research papers.</pre>
     <div class="card-body">
 
 
-        <pre class="card-body-text">There are different task sets for different age students. Six age groups are suggested.
-I group. Pre-Primary - Grade 1 and 2 (5-8 years old)
-II group. Primary - Grade 3 and 4 (8-10 years old)
-III group. Benjamins - Grade 5 and 6 (10-12 years old)
-IV group. Cadets - Grade 7 and 8 (12-14 years old)
-V group. Juniors - Grade 9 and 10 (14-16 years old)
-VI group. Seniors - Grade 11 and 12(13) (16-19 years old)
-The classifications may differ according to class level and options of schooling in different countries.
-Countries do not need to implement all age groups. Only few countries have the lowest age groups.</pre>
+        <pre class="card-body-text">En esta primera edición se diseñan tareas para los siguientes grupos de competición:
+• Grupo III. Benjamín – Estudiantes de Grados 5 y 6 de Primaria
+• Grupo IV. Cadete –Estudiantes de Grados 7 y 8 de Secundaria Básica
+• Grupo V. Junior – Estudiantes de Grados 9 de Secundaria Básica y 10 de Pre universitario
+o 1er año de ETP
+• Grupo VI. Senior– Estudiantes de Grados 11 y 12 de Pre universitario o de 2do, 3ero y
+4to año de ETP
+Próximas ediciones se incorporarán los restantes grupos de Primaria.</pre>
     </div>
 </div>
 
@@ -78,19 +101,14 @@ Countries do not need to implement all age groups. Only few countries have the l
 <div class="card">
 
     <div class="card-header cyanbg">
-        <h5 class="card-title">Recursos</h5>
+        <h5 class="card-title">Fechas</h5>
     </div>
     <div class="card-body">
 
-        <pre class="card-body-text">Previous Bebras tasks you can 
-find in many countries websites 
-as the Bebras brochures.
-Some previous challenges are 
-available to try without 
-registering or logging in.
-It depends on language do you 
-know. Examples: Finland, Sweden, UK.</pre>
-        <a href="https://www.bebras.org/documents.html" class="cyan-bebras">Ver recursos</a>
+        <pre class="card-body-text">Fecha de realización del concurso: 12 al 23 de diciembre de 2022. 
+El concurso se realiza en el lugar adecuado gestionado por quien 
+inscriba al estudiante utilizando computadoras o dispositivos móviles 
+con adecuada conexión a Internet.</pre>
     </div>
 </div>
 
@@ -98,19 +116,19 @@ know. Examples: Finland, Sweden, UK.</pre>
 <div class="card">
 
     <div class="card-header greenbg">
-        <h5 class="card-title">Inténtalo!</h5>
+        <h5 class="card-title">En qué consiste?</h5>
     </div>
     <div class="card-body">
 
-        <pre class="card-body-text">Everyone can do it. The Bebras challenges are 
-made of a set of short problems called Bebras 
-tasks and are delivered online. The tasks are fun,
-engaging and based on problems that computer 
-scientists often meet and enjoy solving.
-The tasks can be solved without prior knowledge 
-but instead require logical thinking. The aim is 
-to solve as many as you can in the allotted time.</pre>
-        <a href="https://www.bebras.org/examples.html" class="green-bebras">More information What is a Bebras task.</a>
+        <pre class="card-body-text">El concurso se compone de una prueba principal 
+sin ninguna selección de estudiantes que se ejecuta 
+en una plataforma web a la que los organizadores van 
+a dirigirlo luego de preinscribirse el estudiante a 
+competir. La prueba tiene dos tipos de tareas: 
+preguntas de opción múltiple y problemas interactivos. 
+El número de tareas varía año tras año, para este desafío son 12
+preguntas a responder en 45 minutos</pre>
+        <a href="https://www.bebras.org/examples.html" class="green-bebras">Más información</a>
     </div>
 </div>
 
@@ -120,21 +138,22 @@ to solve as many as you can in the allotted time.</pre>
 <div class="card">
 
     <div class="card-header salmonbg">
-        <h5 class="card-title">Qué es el pensamiento computacional?</h5>
+        <h5 class="card-title">Reconocimientos y premios</h5>
     </div>
     <div class="card-body">
 
-        <pre class="card-body-text">Computational thinking involves using 
-a setof problem-solving skills and 
-techniques that software engineers use 
-to write programs and apps.
-The Bebras challenge promotes problem 
-solving skills and Informatics concepts 
-including the ability to break down 
-complex tasks into simpler components, 
-algorithm design, pattern recognition, 
-pattern generalisation and abstraction.</pre>
-        <a href="https://es.wikipedia.org/wiki/Pensamiento_computacional" class="salmon-bebras">Más acerca del pensamiento computacional</a>
+        <pre class="card-body-text">• A todos los participantes del concurso Bebras Cuba se emitirá un certificado digital de
+participación, que podrá ser descargado en el sitio https://bebrascuba.uclv.cu por parte
+de los profesores.
+• Según las puntuaciones por niveles y en dependencia de la cantidad de participantes
+por niveles, se entregarán medallas de Oro, Plata y Bronce. También del mismo modo
+se harán llegar los diplomas.
+• Es primordial que estos medallistas sean reconocidos como tal en cada una de las
+escuelas o instituciones que acogieron el concurso.
+• En el caso de los medallistas se emitirán cartas de solicitud de ingreso a Centros de
+Entrenamiento Provinciales firmadas por las autoridades competentes de la Facultad de
+Matemática, Física y Computación de la Universidad Central “Marta Abreu” de Las villas
+entidad coordinadora de Bebras Cuba.</pre>
     </div>
 </div>
 

@@ -48,10 +48,10 @@ class acceder_controller extends Controller
 
         } elseif (password_verify($pass, $validation[0]->contrasena) and $validation[0]->validado == false)
 
-            return view('acceder', ['error' => 'sus credenciales no han sido verificadas por nuestro equipo']);
+            return view('acceder', ['error' => 'Sus credenciales no han sido verificadas por nuestro equipo']);
 
         else
 
-            return view('acceder', ['error' => 'sus credenciales son incorrectas']);
+            return view('acceder', ['error' => 'Sus credenciales son incorrectas']);
     }
 }

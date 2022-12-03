@@ -49,39 +49,34 @@ class solicitud_controller extends Controller
         }
 
         $rol = $_SESSION['rol'];
+
+        //ANCHOR - Entrada de datos
+        $nombre_solicitante = $request->nombre_solicitante;
+        $correo_solicitante = $request->correo_solicitante;
+        $telefono_solicitante = $request->telefono_solicitante;
+        $nombre_escuela = $request->nombre_escuela;
+        $enivel = $request->nivel;
+        $telefono_escuela = $request->telefono_escuela;
+        $munic = $request->municipio;
+        $provincia = $request->provincia;
+
+
         try {
-
-            //ANCHOR - Entrada de datos
-            $nombre_solicitante = $request->nombre_solicitante;
-            $correo_solicitante = $request->correo_solicitante;
-            $telefono_solicitante = $request->telefono_solicitante;
-
-            $nombre_escuela = $request->nombre_escuela;
-            $enivel = $request->nivel;
-            $telefono_escuela = $request->telefono_escuela;
-
-            $munic = $request->municipio;
-            $provincia = $request->provincia;
-
-
 
             //ANCHOR - Validacion
             $validator = new Validator();
-            $validator->checkCorreo($correo_solicitante);
-            $validator->checkTelefono($telefono_escuela);
-            $validator->checkTelefono($telefono_solicitante);
+            
+            if($correo_solicitante!='')
+                $correo_solicitante = $validator->checkCorreo($correo_solicitante);
+            
+            if($telefono_solicitante)
+                $telefono_solicitante = $validator->checkTelefono($telefono_solicitante);
+            
+            
+            $telefono_escuela = $validator->checkTelefono($telefono_escuela);
             $validator->checkNivel($enivel);
-            $validator->checkMunicipio($munic);
-            $validator->checkProvincia($provincia);
-
-            if (
-                $telefono_escuela == '' or
-                $nombre_escuela == '' or
-                $enivel == '' or
-                $provincia == '' or
-                $munic == ''
-            )
-                return $this->index($rol,'no puede dejar campos vacios');
+            // $validator->checkMunicipio($munic);
+            // $validator->checkProvincia($provincia);
 
             //ANCHOR - Guardado de datos
             $model = new Solicitud();
@@ -95,10 +90,18 @@ class solicitud_controller extends Controller
             $model->municipio = $munic;
             $model->save();
             
-            return view('inicio/ok');
+            return view('inicio',['texto' => 'Operación completada']);
+
         } catch (Exception $e) {
 
-            return $this->index($rol,'error en los datos introducidos');
+            if($validator -> isKnownError($e->getMessage()))
+                return $this->index($rol,$e->getMessage());
+
+            elseif(substr($e->getMessage(),0,33)=='SQLSTATE[23505]: Unique violation')
+                return $this->index($rol,'Ya se ha hecho una solicitud para su escuela');
+
+            else
+                return $this->index($rol,'Error vuelva a intentarlo');
         }
     }
 }

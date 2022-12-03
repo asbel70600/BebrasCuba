@@ -85,7 +85,7 @@
           </div>
   
           <div class="form-group has-feedback">
-              <input type="number" id="editar-carnet"name="carnet" class="form-control" placeholder="Carnet">
+              <input type="number" min="0" max="99999999999" id="editar-carnet"name="carnet" class="form-control" placeholder="Carnet">
           </div>
           
           <div class="form-group has-feedback">
@@ -93,7 +93,7 @@
           </div>
   
           <div class="form-group has-feedback">
-            <input type="text" id="editar-grado" name="grado" class="form-control" placeholder="grado">
+            <input type="text" min="1" max="12" id="editar-grado" name="grado" class="form-control" placeholder="grado">
           </div>
           <input type="hidden" id="last_carnet" name='last_carnet'>
           <button type="submit" class="btn btn-primary btn-block btn-flat">Actualizar</button>

@@ -42,7 +42,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/acceder">Acceder</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link"target="_blank" href="{{ asset('downloads/1era Edición del Concurso Bebras-Convocatoria.pdf') }}">Eso</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" 
                         href="#" id="navbarDropdownMenuLink" 

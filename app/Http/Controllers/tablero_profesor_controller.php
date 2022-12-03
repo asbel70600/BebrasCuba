@@ -7,10 +7,7 @@ use App\Models\Profesor_estudiantes;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
-use Psy\ExecutionLoopClosure;
 
-use function PHPSTORM_META\type;
 
 class tablero_profesor_controller extends Controller
 {
