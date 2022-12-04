@@ -15,7 +15,6 @@
 <body style="background-color:mistyrose; z-index:-2;display:flex; min-height: 100vh; flex-direction: column; justify-content: space-between">
 
 <div>
-
     <div class="background_gray_decorative_rectangle"></div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
